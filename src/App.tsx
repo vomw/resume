@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { ResumeData } from './types';
+import { ResumeData, PersonalInfo as PersonalInfoType, Experience as ExperienceType, Education as EducationType, Skills as SkillsType, Project as ProjectType } from './types';
 import './App.css';
 
 // Import components
@@ -20,12 +20,12 @@ function App() {
   }
 
   const resume: ResumeData = {
-    personalInfo: t('personalInfo', { returnObjects: true }),
+    personalInfo: t('personalInfo', { returnObjects: true }) as PersonalInfoType,
     summary: t('summary'),
-    experience: t('experience', { returnObjects: true }),
-    education: t('education', { returnObjects: true }),
-    skills: t('skills', { returnObjects: true }),
-    projects: t('projects', { returnObjects: true }),
+    experience: t('experience', { returnObjects: true }) as ExperienceType[],
+    education: t('education', { returnObjects: true }) as EducationType[],
+    skills: t('skills', { returnObjects: true }) as SkillsType,
+    projects: t('projects', { returnObjects: true }) as ProjectType[],
   };
 
   return (
