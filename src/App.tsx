@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { ResumeData } from './types';
 import './App.css';
-import resumeData from '../resume.json'; // Import the JSON data
 
 // Import components
 import PersonalInfo from './components/PersonalInfo';
@@ -16,9 +15,10 @@ function App() {
   const [resume, setResume] = useState<ResumeData | null>(null);
 
   useEffect(() => {
-    // In a real application, you might fetch this from an API
-    // For this example, we're directly importing the JSON file
-    setResume(resumeData as ResumeData);
+    fetch('/resume.json')
+      .then(response => response.json())
+      .then(data => setResume(data as ResumeData))
+      .catch(error => console.error('Error fetching resume data:', error));
   }, []);
 
   if (!resume) {
