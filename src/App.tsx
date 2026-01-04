@@ -15,7 +15,7 @@ function App() {
   const [resume, setResume] = useState<ResumeData | null>(null);
 
   useEffect(() => {
-    fetch('/resume.json')
+    fetch(`${import.meta.env.BASE_URL}resume.json`)
       .then(response => response.json())
       .then(data => setResume(data as ResumeData))
       .catch(error => console.error('Error fetching resume data:', error));
