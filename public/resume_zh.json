@@ -7,7 +7,9 @@
     "linkedin": "linkedin.com/in/alicejohnson",
     "github": "github.com/alicej"
   },
+  "summaryTitle": "概括",
   "summary": "经验丰富、以结果为导向的高级全栈开发人员，在设计、开发和部署可扩展的 Web 应用程序方面拥有 10 多年的专业知识。精通现代 JavaScript 框架（React、Angular）、后端技术（Node.js、Python/Django）和云平台（AWS、Azure）。大力倡导简洁代码、测试驱动开发和敏捷方法。寻求利用先进的技术技能和领导能力来提供创新的解决方案并推动团队成功。",
+  "experienceTitle": "工作经验",
   "experience": [
     {
       "title": "高级软件工程师",
@@ -40,6 +42,7 @@
       ]
     }
   ],
+  "educationTitle": "教育",
   "education": [
     {
       "degree": "计算机科学理学硕士",
@@ -52,12 +55,21 @@
       "years": "2012"
     }
   ],
+  "skillsTitle": "技能",
   "skills": {
     "programmingLanguages": ["JavaScript", "TypeScript", "Python", "Java", "Go"],
     "frontend": ["React", "Angular", "Vue.js", "HTML5", "CSS3", "Sass", "Webpack", "Vite", "Bootstrap", "Tailwind CSS"],
     "backend": ["Node.js", "Express.js", "Django", "Flask", "Spring Boot", "RESTful APIs", "GraphQL", "MongoDB", "PostgreSQL", "MySQL", "Redis"],
     "tools": ["Git", "Docker", "Kubernetes", "AWS", "Azure", "GCP", "Jira", "Jenkins", "CircleCI", "Jest", "Cypress", "Selenium"]
   },
+  "skillsCategories": {
+    "programmingLanguages": "编程语言",
+    "frontend": "前端",
+    "backend": "后端",
+    "tools": "工具"
+  },
+  "projectsTitle": "项目",
+  "technologiesTitle": "技术",
   "projects": [
     {
       "name": "人工智能推荐引擎",

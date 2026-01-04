@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { Project as ProjectType } from '../types';
 
 interface ProjectsProps {
@@ -6,9 +7,10 @@ interface ProjectsProps {
 }
 
 const Projects: React.FC<ProjectsProps> = ({ projects }) => {
+  const { t } = useTranslation();
   return (
     <section className="my-5">
-      <h2 className="text-center mb-4">Projects</h2>
+      <h2 className="text-center mb-4">{t('projectsTitle')}</h2>
       <div className="row justify-content-center">
         {projects.map((project, index) => (
           <div key={index} className="col-md-6 mb-4">
@@ -16,7 +18,7 @@ const Projects: React.FC<ProjectsProps> = ({ projects }) => {
               <div className="card-body">
                 <h5 className="card-title">{project.name}</h5>
                 <p className="card-text">{project.description}</p>
-                <p className="card-text"><strong>Technologies:</strong> {project.technologies.join(', ')}</p>
+                <p className="card-text"><strong>{t('technologiesTitle')}:</strong> {project.technologies.join(', ')}</p>
               </div>
             </div>
           </div>

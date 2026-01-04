@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { Education as EducationType } from '../types';
 
 interface EducationProps {
@@ -6,9 +7,10 @@ interface EducationProps {
 }
 
 const Education: React.FC<EducationProps> = ({ education }) => {
+  const { t } = useTranslation();
   return (
     <section className="my-5">
-      <h2 className="text-center mb-4">Education</h2>
+      <h2 className="text-center mb-4">{t('educationTitle')}</h2>
       {education.map((edu, index) => (
         <div key={index} className="card mb-3">
           <div className="card-body">

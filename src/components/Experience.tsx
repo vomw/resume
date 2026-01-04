@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { Experience as ExperienceType } from '../types';
 
 interface ExperienceProps {
@@ -6,9 +7,10 @@ interface ExperienceProps {
 }
 
 const Experience: React.FC<ExperienceProps> = ({ experience }) => {
+  const { t } = useTranslation();
   return (
     <section className="my-5">
-      <h2 className="text-center mb-4">Work Experience</h2>
+      <h2 className="text-center mb-4">{t('experienceTitle')}</h2>
       {experience.map((exp, index) => (
         <div key={index} className="card mb-3">
           <div className="card-body">
