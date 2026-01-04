@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { ResumeData, PersonalInfo as PersonalInfoType, Experience as ExperienceType, Education as EducationType, Skills as SkillsType, Project as ProjectType } from './types';
 import './App.css';
@@ -27,6 +28,12 @@ function App() {
     skills: t('skills', { returnObjects: true }) as SkillsType,
     projects: t('projects', { returnObjects: true }) as ProjectType[],
   };
+
+  useEffect(() => {
+    if (resume.personalInfo) {
+      document.title = t('pageTitle', { name: resume.personalInfo.name });
+    }
+  }, [resume.personalInfo, t]);
 
   return (
     <div className="container my-5">

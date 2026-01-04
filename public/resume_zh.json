@@ -7,6 +7,7 @@
     "linkedin": "linkedin.com/in/alicejohnson",
     "github": "github.com/alicej"
   },
+  "pageTitle": "{{name}}的简历",
   "summaryTitle": "概括",
   "summary": "经验丰富、以结果为导向的高级全栈开发人员，在设计、开发和部署可扩展的 Web 应用程序方面拥有 10 多年的专业知识。精通现代 JavaScript 框架（React、Angular）、后端技术（Node.js、Python/Django）和云平台（AWS、Azure）。大力倡导简洁代码、测试驱动开发和敏捷方法。寻求利用先进的技术技能和领导能力来提供创新的解决方案并推动团队成功。",
   "experienceTitle": "工作经验",

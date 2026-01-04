@@ -7,6 +7,7 @@
     "linkedin": "linkedin.com/in/alicejohnson",
     "github": "github.com/alicej"
   },
+  "pageTitle": "{{name}}'s Resume",
   "summaryTitle": "Summary",
   "summary": "Highly experienced and results-driven Senior Full Stack Developer with 10+ years of expertise in designing, developing, and deploying scalable web applications. Proficient in modern JavaScript frameworks (React, Angular), backend technologies (Node.js, Python/Django), and cloud platforms (AWS, Azure). Strong advocate for clean code, test-driven development, and agile methodologies. Seeking to leverage advanced technical skills and leadership capabilities to deliver innovative solutions and drive team success.",
   "experienceTitle": "Work Experience",
