@@ -16,7 +16,7 @@ const Skills: React.FC<SkillsProps> = ({ skills }) => {
               <div className="card-body">
                 <h5 className="card-title text-capitalize">{category.replace(/([A-Z])/g, ' $1').trim()}</h5>
                 <ul className="list-group list-group-flush">
-                  {skillList.map((skill, index) => (
+                  {skillList.map((skill: string, index: number) => (
                     <li key={index} className="list-group-item">{skill}</li>
                   ))}
                 </ul>
