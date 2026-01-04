@@ -10,7 +10,7 @@ i18n
     fallbackLng: 'en',
     debug: true,
     backend: {
-      loadPath: '/resume_{{lng}}.json',
+      loadPath: `${import.meta.env.BASE_URL}resume_{{lng}}.json`,
     },
     interpolation: {
       escapeValue: false, // not needed for react as it escapes by default
