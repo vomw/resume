@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import { ResumeData } from './types';
 import './App.css';
 
@@ -9,24 +9,28 @@ import Experience from './components/Experience';
 import Education from './components/Education';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
+import LanguageSwitcher from './components/LanguageSwitcher';
 
 
 function App() {
-  const [resume, setResume] = useState<ResumeData | null>(null);
+  const { t, i18n } = useTranslation();
 
-  useEffect(() => {
-    fetch(`${import.meta.env.BASE_URL}resume.json`)
-      .then(response => response.json())
-      .then(data => setResume(data as ResumeData))
-      .catch(error => console.error('Error fetching resume data:', error));
-  }, []);
-
-  if (!resume) {
+  if (!i18n.isInitialized) {
     return <div className="d-flex justify-content-center align-items-center vh-100">Loading resume...</div>;
   }
 
+  const resume: ResumeData = {
+    personalInfo: t('personalInfo', { returnObjects: true }),
+    summary: t('summary'),
+    experience: t('experience', { returnObjects: true }),
+    education: t('education', { returnObjects: true }),
+    skills: t('skills', { returnObjects: true }),
+    projects: t('projects', { returnObjects: true }),
+  };
+
   return (
     <div className="container my-5">
+      <LanguageSwitcher />
       <PersonalInfo personalInfo={resume.personalInfo} />
       <hr />
       <Summary summary={resume.summary} />
