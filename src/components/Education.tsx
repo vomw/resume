@@ -1,6 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Education as EducationType } from '../types';
+import CanvasText from './CanvasText';
 
 interface EducationProps {
   education: EducationType[];
@@ -10,12 +11,14 @@ const Education: React.FC<EducationProps> = ({ education }) => {
   const { t } = useTranslation();
   return (
     <section className="my-5">
-      <h2 className="text-center mb-4">{t('educationTitle')}</h2>
+      <div className="text-center mb-4">
+        <CanvasText text={t('educationTitle')} fontSize={32} />
+      </div>
       {education.map((edu, index) => (
         <div key={index} className="card mb-3">
           <div className="card-body">
-            <h5 className="card-title">{edu.degree}</h5>
-            <h6 className="card-subtitle mb-2 text-muted">{edu.university} | {edu.years}</h6>
+            <CanvasText text={edu.degree} fontSize={20} className="card-title" />
+            <CanvasText text={`${edu.university} | ${edu.years}`} fontSize={16} className="card-subtitle mb-2 text-muted" />
           </div>
         </div>
       ))}
