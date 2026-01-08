@@ -1,17 +1,19 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { Education as EducationType } from '../types';
+import { useResumeData } from '../contexts/ResumeDataContext';
 
-interface EducationProps {
-  education: EducationType[];
-}
-
-const Education: React.FC<EducationProps> = ({ education }) => {
+const Education: React.FC = () => {
   const { t } = useTranslation();
+  const { resume } = useResumeData();
+
+  if (!resume?.education) {
+    return null;
+  }
+
   return (
     <section className="my-5">
       <h2 className="text-center mb-4">{t('educationTitle')}</h2>
-      {education.map((edu, index) => (
+      {resume.education.map((edu, index) => (
         <div key={index} className="card mb-3">
           <div className="card-body">
             <h5 className="card-title">{edu.degree}</h5>

@@ -1,18 +1,20 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { Project as ProjectType } from '../types';
+import { useResumeData } from '../contexts/ResumeDataContext';
 
-interface ProjectsProps {
-  projects: ProjectType[];
-}
-
-const Projects: React.FC<ProjectsProps> = ({ projects }) => {
+const Projects: React.FC = () => {
   const { t } = useTranslation();
+  const { resume } = useResumeData();
+
+  if (!resume?.projects) {
+    return null;
+  }
+
   return (
     <section className="my-5">
       <h2 className="text-center mb-4">{t('projectsTitle')}</h2>
       <div className="row justify-content-center">
-        {projects.map((project, index) => (
+        {resume.projects.map((project, index) => (
           <div key={index} className="col-md-6 mb-4">
             <div className="card h-100">
               <div className="card-body">

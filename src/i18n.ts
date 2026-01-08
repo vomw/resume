@@ -1,11 +1,14 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
-import HttpApi from 'i18next-http-backend';
 import LanguageDetector from 'i18next-browser-languagedetector';
 
-// Function to decode Base64
-const atob_utf8 = (b64: string) => {
-  return decodeURIComponent(
+// Import the resume data
+import resumeEN from './assets/resume_en.b64?raw';
+import resumeZH from './assets/resume_zh.b64?raw';
+
+// Function to decode Base64 and parse JSON
+const parseResumeData = (b64: string) => {
+  const decodedString = decodeURIComponent(
     atob(b64)
       .split('')
       .map(function (c) {
@@ -13,27 +16,32 @@ const atob_utf8 = (b64: string) => {
       })
       .join('')
   );
+  return JSON.parse(decodedString);
 };
 
+const resources = {
+  en: {
+    translation: parseResumeData(resumeEN),
+  },
+  zh: {
+    translation: parseResumeData(resumeZH),
+  },
+};
 
 i18n
-  .use(HttpApi)
-  .use(LanguageDetector) // Add LanguageDetector
+  .use(LanguageDetector)
   .use(initReactI18next)
   .init({
+    resources,
     supportedLngs: ['en', 'zh'],
     fallbackLng: 'en',
     debug: true,
-    backend: {
-      loadPath: `${import.meta.env.BASE_URL}resume_{{lng}}.b64`,
-      parse: (data: string) => JSON.parse(atob_utf8(data)),
-    },
     detection: {
       order: ['navigator', 'querystring', 'cookie', 'localStorage', 'sessionStorage', 'htmlTag', 'path', 'subdomain'],
       caches: ['localStorage'],
     },
     interpolation: {
-      escapeValue: false, // not needed for react as it escapes by default
+      escapeValue: false, // React already safes from xss
     },
   });
 

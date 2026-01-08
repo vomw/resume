@@ -1,11 +1,15 @@
 import React from 'react';
-import { PersonalInfo as PersonalInfoType } from '../types';
+import { useResumeData } from '../contexts/ResumeDataContext';
 
-interface PersonalInfoProps {
-  personalInfo: PersonalInfoType;
-}
+const PersonalInfo: React.FC = () => {
+  const { resume } = useResumeData();
 
-const PersonalInfo: React.FC<PersonalInfoProps> = ({ personalInfo }) => {
+  if (!resume?.personalInfo) {
+    return null;
+  }
+
+  const { personalInfo } = resume;
+
   return (
     <section className="text-center my-5">
       <h1 className="display-4">{personalInfo.name}</h1>

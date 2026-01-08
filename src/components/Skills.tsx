@@ -1,13 +1,17 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { Skills as SkillsType } from '../types';
+import { useResumeData } from '../contexts/ResumeDataContext';
 
-interface SkillsProps {
-  skills: SkillsType;
-}
-
-const Skills: React.FC<SkillsProps> = ({ skills }) => {
+const Skills: React.FC = () => {
   const { t } = useTranslation();
+  const { resume } = useResumeData();
+
+  if (!resume?.skills) {
+    return null;
+  }
+
+  const { skills } = resume;
+
   return (
     <section className="my-5">
       <h2 className="text-center mb-4">{t('skillsTitle')}</h2>

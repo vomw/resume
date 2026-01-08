@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { ResumeData, PersonalInfo as PersonalInfoType, Experience as ExperienceType, Education as EducationType, Skills as SkillsType, Project as ProjectType } from './types';
+import { useResumeData } from './contexts/ResumeDataContext';
 import './App.css';
 
 // Import components
@@ -11,44 +11,43 @@ import Education from './components/Education';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
 import LanguageSwitcher from './components/LanguageSwitcher';
-
+import ThemeSwitcher from './components/ThemeSwitcher';
 
 function App() {
-  const { t, i18n } = useTranslation();
+  const { resume, isLoading, error } = useResumeData();
+  const { t } = useTranslation();
 
-  if (!i18n.isInitialized) {
+  useEffect(() => {
+    if (resume?.personalInfo) {
+      document.title = t('pageTitle', { name: resume.personalInfo.name });
+    }
+  }, [resume, t]);
+
+  if (isLoading) {
     return <div className="d-flex justify-content-center align-items-center vh-100">Loading resume...</div>;
   }
 
-  const resume: ResumeData = {
-    personalInfo: t('personalInfo', { returnObjects: true }) as PersonalInfoType,
-    summary: t('summary'),
-    experience: t('experience', { returnObjects: true }) as ExperienceType[],
-    education: t('education', { returnObjects: true }) as EducationType[],
-    skills: t('skills', { returnObjects: true }) as SkillsType,
-    projects: t('projects', { returnObjects: true }) as ProjectType[],
-  };
-
-  useEffect(() => {
-    if (resume.personalInfo) {
-      document.title = t('pageTitle', { name: resume.personalInfo.name });
-    }
-  }, [resume.personalInfo, t]);
+  if (error || !resume) {
+    return <div className="d-flex justify-content-center align-items-center vh-100">Error loading resume data.</div>;
+  }
 
   return (
     <div className="container my-5">
-      <LanguageSwitcher />
-      <PersonalInfo personalInfo={resume.personalInfo} />
+      <div className="d-flex justify-content-end gap-2 mb-4">
+        <LanguageSwitcher />
+        <ThemeSwitcher />
+      </div>
+      <PersonalInfo />
       <hr />
-      <Summary summary={resume.summary} />
+      <Summary />
       <hr />
-      <Experience experience={resume.experience} />
+      <Experience />
       <hr />
-      <Education education={resume.education} />
+      <Education />
       <hr />
-      <Skills skills={resume.skills} />
+      <Skills />
       <hr />
-      <Projects projects={resume.projects} />
+      <Projects />
     </div>
   );
 }

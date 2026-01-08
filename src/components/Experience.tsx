@@ -1,17 +1,19 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { Experience as ExperienceType } from '../types';
+import { useResumeData } from '../contexts/ResumeDataContext';
 
-interface ExperienceProps {
-  experience: ExperienceType[];
-}
-
-const Experience: React.FC<ExperienceProps> = ({ experience }) => {
+const Experience: React.FC = () => {
   const { t } = useTranslation();
+  const { resume } = useResumeData();
+
+  if (!resume?.experience) {
+    return null;
+  }
+
   return (
     <section className="my-5">
       <h2 className="text-center mb-4">{t('experienceTitle')}</h2>
-      {experience.map((exp, index) => (
+      {resume.experience.map((exp, index) => (
         <div key={index} className="card mb-3">
           <div className="card-body">
             <h5 className="card-title">{exp.title}</h5>
