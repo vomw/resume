@@ -11,7 +11,6 @@ import Education from './components/Education';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
 import LanguageSwitcher from './components/LanguageSwitcher';
-import ThemeSwitcher from './components/ThemeSwitcher';
 
 function App() {
   const { resume, isLoading, error } = useResumeData();
@@ -33,10 +32,7 @@ function App() {
 
   return (
     <div className="container my-5">
-      <div className="d-flex justify-content-end gap-2 mb-4">
-        <LanguageSwitcher />
-        <ThemeSwitcher />
-      </div>
+      <LanguageSwitcher />
       <PersonalInfo />
       <hr />
       <Summary />

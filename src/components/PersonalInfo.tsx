@@ -1,14 +1,10 @@
 import React from 'react';
-import { useResumeData } from '../contexts/ResumeDataContext';
+import { useTranslation } from 'react-i18next';
+import { PersonalInfo as PersonalInfoType } from '../types';
 
 const PersonalInfo: React.FC = () => {
-  const { resume } = useResumeData();
-
-  if (!resume?.personalInfo) {
-    return null;
-  }
-
-  const { personalInfo } = resume;
+  const { t } = useTranslation();
+  const personalInfo = t('personalInfo', { returnObjects: true }) as PersonalInfoType;
 
   return (
     <section className="text-center my-5">
