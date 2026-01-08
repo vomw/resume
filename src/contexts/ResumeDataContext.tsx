@@ -2,6 +2,7 @@
 import { createContext, useContext, ReactNode } from 'react';
 import { useTranslation } from 'react-i18next';
 import { ResumeData, PersonalInfo, Experience, Education, Skills, Project } from '../types';
+import { resumeLoadingError } from '../i18n';
 
 interface ResumeDataContextType {
   resume: ResumeData | null;
@@ -28,7 +29,7 @@ export const ResumeDataProvider = ({ children }: { children: ReactNode }) => {
   const value = {
     resume,
     isLoading,
-    error: i18n.loadError,
+    error: resumeLoadingError,
   };
 
   return (
