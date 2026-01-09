@@ -9,7 +9,7 @@ const LanguageSwitcher: React.FC = () => {
   };
 
   return (
-    <div style={{ position: 'absolute', top: 10, right: 10 }}>
+    <div className="language-switcher">
       <button onClick={() => changeLanguage('en')} disabled={i18n.language === 'en'}>English</button>
       <button onClick={() => changeLanguage('zh')} disabled={i18n.language === 'zh'}>中文</button>
     </div>

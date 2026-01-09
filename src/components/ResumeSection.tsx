@@ -7,7 +7,7 @@ interface ResumeSectionProps {
 
 const ResumeSection: React.FC<ResumeSectionProps> = ({ title, children }) => {
   return (
-    <section className="my-5">
+    <section className="my-5 resume-section">
       <h2 className="text-center mb-4">{title}</h2>
       {children}
     </section>

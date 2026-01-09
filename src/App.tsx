@@ -34,15 +34,10 @@ function App() {
     <div className="container my-5">
       <LanguageSwitcher />
       <PersonalInfo />
-      <hr />
       <Summary />
-      <hr />
       <Experience />
-      <hr />
       <Education />
-      <hr />
       <Skills />
-      <hr />
       <Projects />
     </div>
   );

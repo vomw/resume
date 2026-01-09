@@ -1,13 +1,10 @@
-body, html {
-  -webkit-user-select: none;  /* Safari */
-  -moz-user-select: none;     /* Firefox */
-  -ms-user-select: none;      /* Internet Explorer/Edge */
-  user-select: none;          /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+.language-switcher {
+  position: absolute;
+  top: 10px;
+  right: 10px;
 }
 
-a, button {
-  -webkit-user-select: auto;  /* Safari */
-  -moz-user-select: auto;     /* Firefox */
-  -ms-user-select: auto;      /* Internet Explorer/Edge */
-  user-select: auto;          /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+.resume-section:not(:first-child) {
+  border-top: 1px solid #dee2e6;
+  padding-top: 2rem;
 }
