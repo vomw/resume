@@ -18,7 +18,15 @@ const Projects: React.FC = () => {
           <div key={index} className="col-md-6 mb-4">
             <div className="card h-100">
               <div className="card-body">
-                <h5 className="card-title">{project.name}</h5>
+                <h5 className="card-title">
+                  {project.url ? (
+                    <a href={project.url} target="_blank" rel="noopener noreferrer">
+                      {project.name}
+                    </a>
+                  ) : (
+                    project.name
+                  )}
+                </h5>
                 <p className="card-text">{project.description}</p>
                 <p className="card-text"><strong>{t('technologiesTitle')}:</strong> {project.technologies.join(', ')}</p>
               </div>
