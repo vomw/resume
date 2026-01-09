@@ -1,15 +1,16 @@
 import React from 'react';
-import { useTranslation } from 'react-i18next';
+import ResumeSection from './ResumeSection';
+import { useResumeData } from '../contexts/ResumeDataContext';
 
 const Summary: React.FC = () => {
-  const { t } = useTranslation();
-  const summary = t('summary');
+  const { resume } = useResumeData();
+
+  if (!resume) return null;
 
   return (
-    <section className="my-5">
-      <h2 className="text-center mb-4">{t('summaryTitle')}</h2>
-      <p className="text-center lead">{summary}</p>
-    </section>
+    <ResumeSection title={resume.summaryTitle}>
+      <p className="text-center lead">{resume.summary}</p>
+    </ResumeSection>
   );
 };
 

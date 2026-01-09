@@ -1,6 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { useResumeData } from '../contexts/ResumeDataContext';
+import ResumeSection from './ResumeSection';
 
 const Projects: React.FC = () => {
   const { t } = useTranslation();
@@ -11,8 +12,7 @@ const Projects: React.FC = () => {
   }
 
   return (
-    <section className="my-5">
-      <h2 className="text-center mb-4">{t('projectsTitle')}</h2>
+    <ResumeSection title={resume.projectsTitle}>
       <div className="row justify-content-center">
         {resume.projects.map((project, index) => (
           <div key={index} className="col-md-6 mb-4">
@@ -26,7 +26,7 @@ const Projects: React.FC = () => {
           </div>
         ))}
       </div>
-    </section>
+    </ResumeSection>
   );
 };
 
