@@ -13,7 +13,7 @@ const Education: React.FC = () => {
         <div key={index} className="card mb-3">
           <div className="card-body">
             <h5 className="card-title">{edu.degree}</h5>
-            <h6 className="card-subtitle mb-2 text-muted">{edu.institution} | {edu.years}</h6>
+            <h6 className="card-subtitle mb-2 text-muted">{edu.university} | {edu.years}</h6>
           </div>
         </div>
       ))}

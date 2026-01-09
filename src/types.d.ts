@@ -38,8 +38,13 @@ export interface Project {
 export interface ResumeData {
   personalInfo: PersonalInfo;
   summary: string;
+  summaryTitle: string;
   experience: Experience[];
+  experienceTitle: string;
   education: Education[];
+  educationTitle: string;
   skills: Skills;
+  skillsTitle: string;
   projects: Project[];
+  projectsTitle: string;
 }

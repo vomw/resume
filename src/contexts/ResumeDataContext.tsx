@@ -20,10 +20,15 @@ export const ResumeDataProvider = ({ children }: { children: ReactNode }) => {
   const resume: ResumeData | null = isLoading ? null : {
     personalInfo: t('personalInfo', { returnObjects: true }) as PersonalInfo,
     summary: t('summary'),
+    summaryTitle: t('summaryTitle'),
     experience: t('experience', { returnObjects: true }) as Experience[],
+    experienceTitle: t('experienceTitle'),
     education: t('education', { returnObjects: true }) as Education[],
+    educationTitle: t('educationTitle'),
     skills: t('skills', { returnObjects: true }) as Skills,
+    skillsTitle: t('skillsTitle'),
     projects: t('projects', { returnObjects: true }) as Project[],
+    projectsTitle: t('projectsTitle'),
   };
 
   const value = {
