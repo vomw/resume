@@ -33,12 +33,14 @@ function App() {
   return (
     <div className="container my-5">
       <LanguageSwitcher />
-      <PersonalInfo />
-      <Summary />
-      <Experience />
-      <Education />
-      <Skills />
-      <Projects />
+      <div className="main-content-wrapper">
+        <PersonalInfo />
+        <Summary />
+        <Experience />
+        <Education />
+        <Skills />
+        <Projects />
+      </div>
     </div>
   );
 }

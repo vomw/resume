@@ -1,3 +1,15 @@
+.main-content-wrapper {
+  max-width: 960px; /* Max width for desktop */
+  margin: 0 auto; /* Center the content */
+  padding: 0 15px; /* Add some horizontal padding */
+}
+
+@media (max-width: 768px) {
+  .main-content-wrapper {
+    padding: 0 10px; /* Reduce padding on smaller screens */
+  }
+}
+
 :root {
   --background-color: #f8f9fa;
   --text-color: #212529;
@@ -31,7 +43,7 @@ a:hover {
 }
 
 .resume-section:not(:first-child) {
-  border-top: 1px solid #dee2e6;
+  border-top: 1px dashed #e0e0e0;
   padding-top: 2rem;
 }
 

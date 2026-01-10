@@ -16,7 +16,7 @@ const Skills: React.FC = () => {
           <h5 className="text-capitalize">{t(`skillsCategories.${category}`)}</h5>
           <div className="d-flex flex-wrap">
             {(skillList as string[]).map((skill: string, index: number) => (
-              <span key={index} className="badge bg-secondary m-1">{skill}</span>
+              <span key={index} className="badge bg-secondary me-2 mb-2">{skill}</span>
             ))}
           </div>
         </div>

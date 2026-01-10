@@ -9,7 +9,7 @@ const PersonalInfo: React.FC = () => {
   const { personalInfo } = resume;
 
   return (
-    <section className="my-5 resume-section">
+    <section className="resume-section pb-4">
       <h1 className="display-4">{personalInfo.name}</h1>
       <p className="lead">{personalInfo.title}</p>
       <div className="contact-info mt-4">
