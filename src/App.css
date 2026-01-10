@@ -5,6 +5,20 @@
   --subtle-border-color: #e9ecef; /* Light grey for borders */
 }
 
+body, html {
+  -webkit-user-select: none;  /* Safari */
+  -moz-user-select: none;     /* Firefox */
+  -ms-user-select: none;      /* Internet Explorer/Edge */
+  user-select: none;          /* Non-prefixed version */
+}
+
+a, button {
+  -webkit-user-select: auto;  /* Safari */
+  -moz-user-select: auto;     /* Firefox */
+  -ms-user-select: auto;      /* Internet Explorer/Edge */
+  user-select: auto;          /* Non-prefixed version */
+}
+
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   background-color: var(--background-color);
