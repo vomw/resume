@@ -14,11 +14,7 @@ const Skills: React.FC = () => {
       {Object.entries(resume.skills).map(([category, skillList]) => (
         <div key={category} className="mb-3">
           <h5 className="text-capitalize">{t(`skillsCategories.${category}`)}</h5>
-          <div className="d-flex flex-wrap">
-            {(skillList as string[]).map((skill: string, index: number) => (
-              <span key={index} className="badge bg-light text-dark border border-secondary me-2 mb-2">{skill}</span>
-            ))}
-          </div>
+          <p>{(skillList as string[]).join(', ')}</p>
         </div>
       ))}
     </ResumeSection>
