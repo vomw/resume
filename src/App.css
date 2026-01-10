@@ -24,6 +24,12 @@ a:hover {
   right: 10px;
 }
 
+/* Ensure the first resume section has no top border or padding */
+.resume-section:first-of-type {
+  border-top: none !important;
+  padding-top: 0 !important;
+}
+
 .resume-section:not(:first-child) {
   border-top: 1px solid #dee2e6;
   padding-top: 2rem;
