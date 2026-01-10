@@ -12,8 +12,8 @@ const Skills: React.FC = () => {
   return (
     <ResumeSection title={resume.skillsTitle}>
       {Object.entries(resume.skills).map(([category, skillList]) => (
-        <div key={category} className="mb-3">
-          <h5 className="text-capitalize">{t(`skillsCategories.${category}`)}</h5>
+        <div key={category} className="pb-3">
+          <h5 className="text-capitalize mb-2">{t(`skillsCategories.${category}`)}</h5>
           <p>{(skillList as string[]).join(', ')}</p>
         </div>
       ))}

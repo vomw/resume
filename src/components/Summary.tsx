@@ -9,7 +9,7 @@ const Summary: React.FC = () => {
 
   return (
     <ResumeSection title={resume.summaryTitle}>
-      <p className="text-center lead">{resume.summary}</p>
+      <p className="lead">{resume.summary}</p>
     </ResumeSection>
   );
 };

@@ -13,8 +13,8 @@ const Experience: React.FC = () => {
         <div key={index} className="card mb-3">
           <div className="card-body">
             <h5 className="card-title">{exp.title}</h5>
-            <h6 className="card-subtitle mb-2 text-muted">{exp.company} | {exp.years}</h6>
-            <ul className="card-text">
+            <h6 className="card-subtitle mb-3 text-muted">{exp.company} | {exp.years}</h6>
+            <ul className="mb-0">
               {exp.description.map((desc, idx) => (
                 <li key={idx}>{desc}</li>
               ))}

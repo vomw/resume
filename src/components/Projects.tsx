@@ -13,9 +13,9 @@ const Projects: React.FC = () => {
 
   return (
     <ResumeSection title={resume.projectsTitle}>
-      <div className="row justify-content-center">
+      <div className="row">
         {resume.projects.map((project, index) => (
-          <div key={index} className="col-md-6 mb-3">
+          <div key={index} className="col-12 mb-3">
             <div className="card h-100">
               <div className="card-body">
                 <h5 className="card-title">
