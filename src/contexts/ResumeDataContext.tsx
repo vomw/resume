@@ -1,4 +1,3 @@
-// src/contexts/ResumeDataContext.tsx
 import { createContext, useContext, ReactNode } from 'react';
 import { useTranslation } from 'react-i18next';
 import { ResumeData, PersonalInfo, Experience, Education, Skills, Project } from '../types';

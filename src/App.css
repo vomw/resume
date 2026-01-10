@@ -1,22 +1,22 @@
 :root {
   --background-color: #f8f9fa;
   --text-color: #212529;
-  --accent-color: #007bff; /* Bootstrap's primary blue */
-  --subtle-border-color: #e9ecef; /* Light grey for borders */
+  --accent-color: #007bff;
+  --subtle-border-color: #e9ecef;
 }
 
 body, html {
-  -webkit-user-select: none;  /* Safari */
-  -moz-user-select: none;     /* Firefox */
-  -ms-user-select: none;      /* Internet Explorer/Edge */
-  user-select: none;          /* Non-prefixed version */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 a, button {
-  -webkit-user-select: auto;  /* Safari */
-  -moz-user-select: auto;     /* Firefox */
-  -ms-user-select: auto;      /* Internet Explorer/Edge */
-  user-select: auto;          /* Non-prefixed version */
+  -webkit-user-select: auto;
+  -moz-user-select: auto;
+  -ms-user-select: auto;
+  user-select: auto;
 }
 
 body {
@@ -38,17 +38,16 @@ a {
 }
 
 a:hover {
-  color: #0056b3; /* A darker shade of the accent color */
+  color: #0056b3;
 }
 
 .language-switcher {
   position: absolute;
   top: 10px;
   right: 10px;
-  z-index: 1000; /* Ensure it stays on top */
+  z-index: 1000;
 }
 
-/* Ensure the first resume section has no top border or padding */
 .resume-section:first-of-type {
   border-top: none !important;
   padding-top: 0 !important;
@@ -59,7 +58,6 @@ a:hover {
   padding-top: 2rem;
 }
 
-/* Card styles */
 .card {
   border: none;
 }

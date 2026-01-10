@@ -2,11 +2,9 @@ import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
 
-// Import the resume data
 import resumeEN from './assets/resume_en.b64?raw';
 import resumeZH from './assets/resume_zh.b64?raw';
 
-// Function to decode Base64 and parse JSON safely
 const parseResumeData = (b64: string): { data: any | null; error: Error | null } => {
   try {
     const byteString = atob(b64);
@@ -49,7 +47,7 @@ i18n
       caches: ['localStorage'],
     },
     interpolation: {
-      escapeValue: false, // React already safes from xss
+      escapeValue: false,
     },
   });
 

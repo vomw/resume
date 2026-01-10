@@ -3,7 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="robots" content="noarchive">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Resume</title>
   </head>
@@ -11,29 +10,23 @@
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
     <script>
-      // Disable F12, Ctrl+Shift+I, and other dev tool shortcuts
       document.addEventListener('keydown', function(event) {
         if (
           event.key === 'F12' ||
           (event.ctrlKey && event.shiftKey && (event.key === 'I' || event.key === 'i')) ||
-          (event.metaKey && event.altKey && (event.key === 'I' || event.key === 'i')) // Mac Cmd+Opt+I
+          (event.metaKey && event.altKey && (event.key === 'I' || event.key === 'i'))
         ) {
           event.preventDefault();
-          // Optionally, show a message to the user
-          // alert("Developer tools are disabled.");
         }
       });
 
-      // Basic detection for dev tools opening by window size changes
-      const threshold = 160; // Minimum width/height change to consider dev tools
+      const threshold = 160;
       let devtoolsOpen = false;
 
       const detectDevTools = () => {
         if (window.outerWidth - window.innerWidth > threshold || window.outerHeight - window.innerHeight > threshold) {
           if (!devtoolsOpen) {
             console.log("Developer tools detected!");
-            // Optionally, redirect or show a full-screen overlay
-            // window.location.replace("about:blank");
           }
           devtoolsOpen = true;
         } else {
@@ -44,16 +37,14 @@
         }
       };
 
-      // Run detection on resize and load
       window.addEventListener('resize', detectDevTools);
       window.addEventListener('load', detectDevTools);
 
-      // Aggressive debugger statement if dev tools are open
       setInterval(() => {
         if (devtoolsOpen) {
           (function() {}.constructor("debugger").call("action"));
         }
-      }, 1000); // Check every second
+      }, 1000);
     </script>
   </body>
 </html>

@@ -3,7 +3,6 @@ import { useTranslation } from 'react-i18next';
 import { useResumeData } from './contexts/ResumeDataContext';
 import './App.css';
 
-// Import components
 import PersonalInfo from './components/PersonalInfo';
 import Summary from './components/Summary';
 import Experience from './components/Experience';

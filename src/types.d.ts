@@ -1,5 +1,3 @@
-// src/types.d.ts
-
 export interface PersonalInfo {
   name: string;
   title: string;
